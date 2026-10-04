@@ -1,14 +1,13 @@
 export const profile = {
   name: 'Максим Гусев',
   username: 'fadeinflames',
-  role: 'Lead SRE',
+  role: 'SRE Team Lead',
   company: 'RWB',
   location: 'Москва',
   github: 'https://github.com/fadeinflames',
   telegram: 'https://t.me/fadeinflames',
   telegramChannel: 'https://t.me/youngmaxnotes',
   bookingUrl: 'https://cal.com/fadeinflames/30min',
-  resumeUrl: null,
 };
 
 // Only verified public repositories are included. Forks are not presented as original work.

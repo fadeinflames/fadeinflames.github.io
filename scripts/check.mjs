@@ -10,7 +10,7 @@ for(const route of routes){
   if(!html.includes('lang="ru"')||!html.includes('aria-current="page"'))throw Error(`${route}: language/navigation missing`);
   if(/href="#"|undefined|TODO|Lorem ipsum/.test(html))throw Error(`${route}: unfinished content`);
   for(const match of html.matchAll(/(?:href|src)="(\/(?!\/)[^"]*)"/g)){
-    const url=match[1];
+    const url=new URL(match[1],'https://fadeinflames.github.io').pathname;
     await access(path.join(root,url,url.endsWith('/')?'index.html':''));
     checked++;
   }

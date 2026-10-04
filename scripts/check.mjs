@@ -2,7 +2,7 @@ import { readFile, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 const root=path.resolve(fileURLToPath(new URL('../dist/',import.meta.url)));
-const routes=['/','/resume/','/projects/','/links/','/meet/'];
+const routes=['/','/resume/','/projects/','/links/','/meet/','/projects/game-of-incidents/'];
 let checked=0;
 for(const route of routes){
   const html=await readFile(path.join(root,route,'index.html'),'utf8');
@@ -15,4 +15,4 @@ for(const route of routes){
     checked++;
   }
 }
-console.log(`PASS: 5 pages, headings, current navigation and ${checked} local asset/link references.`);
+console.log(`PASS: ${routes.length} pages, headings, current navigation and ${checked} local asset/link references.`);
